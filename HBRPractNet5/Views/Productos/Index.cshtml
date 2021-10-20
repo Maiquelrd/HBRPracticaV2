@@ -1,0 +1,61 @@
+﻿@model IEnumerable<HBRPractNet.ViewModels.ProductosViewModel>
+@using HBRPractNet.Resources;
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>@StringResource.Products</h1>
+
+<p>
+    <a asp-action="Create">@StringResource.Create</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @StringResource.Name
+            </th>
+            <th>
+                @StringResource.Description
+            </th>
+            <th>
+                @StringResource.Price
+            </th>
+            <th>
+                @StringResource.CreationDate
+            </th>
+            <th>
+                @StringResource.Categories
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Producto.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Producto.Descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Producto.Precio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Producto.FechaCreado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Producto.Categoria.CategoriaId)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Producto.ProductoId"> @StringResource.Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Producto.ProductoId"> @StringResource.Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Producto.ProductoId"> @StringResource.Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

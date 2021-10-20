@@ -1,0 +1,41 @@
+﻿@model HBRPractNet.ViewModels.CategoriasViewModel
+@using HBRPractNet.Resources;
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>@StringResource.Edit</h1>
+
+<h4>@StringResource.Categories</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Categoria.CategoriaId" />
+            <div class="form-group">
+                <label asp-for="Categoria.Nombre" class="control-label">@StringResource.Name</label>
+                <input asp-for="Categoria.Nombre" class="form-control" />
+                <span asp-validation-for="Categoria.Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Categoria.Descripcion" class="control-label">@StringResource.Description</label>
+                <input asp-for="Categoria.Descripcion" class="form-control" />
+                <span asp-validation-for="Categoria.Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="@StringResource.Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">@StringResource.BackToList</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/js/Categorias/Valid.js"></script>
+}

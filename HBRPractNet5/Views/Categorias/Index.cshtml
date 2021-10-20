@@ -1,0 +1,49 @@
+﻿@model IEnumerable<HBRPractNet.ViewModels.CategoriasViewModel>
+@using HBRPractNet.Resources;
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>@StringResource.Categories</h1>
+
+<p>
+    <a asp-action="Create">@StringResource.Create</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @StringResource.Name
+            </th>
+            <th>
+                @StringResource.Description
+            </th>
+            <th>
+                @StringResource.CreationDate
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Categoria.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Categoria.Descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Categoria.FechaCreado)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Categoria.CategoriaId">@StringResource.Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Categoria.CategoriaId">@StringResource.Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Categoria.CategoriaId">@StringResource.Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

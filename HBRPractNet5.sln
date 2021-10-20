@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31727.386
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HBRPractNet", "HBRPractNet5\HBRPractNet.csproj", "{C7428851-59D3-499A-90D1-B8284EFAACE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App", "App\App.csproj", "{3A6299EE-97C6-4247-8336-B59D024F7103}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C7428851-59D3-499A-90D1-B8284EFAACE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7428851-59D3-499A-90D1-B8284EFAACE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7428851-59D3-499A-90D1-B8284EFAACE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7428851-59D3-499A-90D1-B8284EFAACE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A6299EE-97C6-4247-8336-B59D024F7103}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A6299EE-97C6-4247-8336-B59D024F7103}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A6299EE-97C6-4247-8336-B59D024F7103}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A6299EE-97C6-4247-8336-B59D024F7103}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C4844BE8-A6DD-4E86-A771-7793600BA127}
+	EndGlobalSection
+EndGlobal

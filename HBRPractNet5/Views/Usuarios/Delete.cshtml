@@ -1,0 +1,40 @@
+﻿@model HBRPractNet.ViewModels.UsuariosViewModel
+@using HBRPractNet.Resources;
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>@StringResource.Delete</h1>
+
+<h3>@StringResource.SureDelete</h3>
+<div>
+    <h4>@StringResource.User</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Usuario.Username)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Usuario.Username)
+        </dd>
+        <dt class="col-sm-2">
+            @StringResource.Password
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Usuario.Password)
+        </dd>
+        <dt class="col-sm-2">
+            @StringResource.IsAdmin
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Usuario.IsAdmin)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Usuario.UsuarioId" />
+        <input type="submit" value="@StringResource.Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">@StringResource.BackToList</a>
+    </form>
+</div>

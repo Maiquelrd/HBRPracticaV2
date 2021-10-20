@@ -1,0 +1,45 @@
+﻿@model HBRPractNet.ViewModels.UsuariosViewModel;
+@using HBRPractNet.Resources;
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>@StringResource.Create</h1>
+
+<h4>@StringResource.User</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" id="createForm">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Usuario.Username" class="control-label"></label>
+                <input asp-for="Usuario.Username" class="form-control" />
+                <span asp-validation-for="Usuario.Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Usuario.Password" class="control-label">@StringResource.Password</label>
+                <input asp-for="Usuario.Password" class="form-control" />
+                <span asp-validation-for="Usuario.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Usuario.IsAdmin" class="control-label">@StringResource.IsAdmin</label>
+                <input asp-for="Usuario.IsAdmin" class="form-control" />
+                <span asp-validation-for="Usuario.IsAdmin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="@StringResource.Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">@StringResource.BackToList</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/js/Usuarios/Valid.js"></script>
+}
